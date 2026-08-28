@@ -1,33 +1,44 @@
-const v=document.getElementById("rickroll"),b=document.getElementById("copy");
+const v=document.getElementById('rickroll');
+const status=document.getElementById('status');
+const hint=document.getElementById('soundHint');
+const b=document.getElementById('copy');
+const shareText=document.getElementById('shareText');
 
 async function startVideo(){
-  if(!v) return;
-  v.muted=true;
-  v.setAttribute("muted","");
-  try{await v.play();}catch(e){}
-  // Try sound immediately. Browsers may reject this without a user gesture.
-  try{v.muted=false;v.removeAttribute("muted");await v.play();}catch(e){
-    v.muted=true;
-    v.setAttribute("muted","");
+  status.textContent='STARTING';
+  try{
+    v.muted=false;
+    await v.play();
+    status.textContent='PLAYING';
+  }catch(e){
+    // Browsers may block autoplay with sound. Start muted so the video still begins immediately.
+    try{
+      v.muted=true;
+      await v.play();
+      status.textContent='PLAYING · SOUND OFF';
+      hint.hidden=false;
+    }catch(err){
+      status.textContent='TAP TO PLAY';
+      hint.hidden=false;
+    }
   }
 }
-window.addEventListener("load",startVideo,{once:true});
 
-// If the browser requires interaction, the first natural tap/click/key press
-// turns sound on. There is no separate "Continue" screen.
-async function enableSound(){
-  try{v.muted=false;v.removeAttribute("muted");await v.play();}catch(e){}
-  window.removeEventListener("pointerdown",enableSound);
-  window.removeEventListener("touchstart",enableSound);
-  window.removeEventListener("keydown",enableSound);
+function enableSound(){
+  if(v.paused) v.play().catch(()=>{});
+  v.muted=false;
+  status.textContent='PLAYING';
+  hint.hidden=true;
 }
-window.addEventListener("pointerdown",enableSound,{passive:true});
-window.addEventListener("touchstart",enableSound,{passive:true});
-window.addEventListener("keydown",enableSound);
 
-b.onclick=async()=>{
- const t="# [Discord Nitro Gift](https://iam-steveee.github.io/freenitro)[.](https://discord.gift/PZ76qKbfX8G8hjTKUKYjZntk)";
- try{await navigator.clipboard.writeText(t)}
- catch(e){const x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();document.execCommand("copy");x.remove()}
- b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1600)
-};
+window.addEventListener('load',startVideo,{once:true});
+document.addEventListener('pointerdown',enableSound,{once:true,passive:true});
+hint.addEventListener('click',enableSound);
+
+b.addEventListener('click',async()=>{
+  const text=shareText.textContent;
+  try{await navigator.clipboard.writeText(text)}
+  catch(e){const x=document.createElement('textarea');x.value=text;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}
+  b.textContent='Copied';
+  setTimeout(()=>b.textContent='Copy',1600);
+});
