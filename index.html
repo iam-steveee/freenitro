@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0a0912">
+<meta name="theme-color" content="#090810">
 <meta name="description" content="Free Nitro. Obviously. Or maybe not.">
 <title>You Fool 😂 — Free Nitro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav">
-  <a class="brand" href="#top" aria-label="Steve Free Nitro home">
+  <a class="brand" href="#top" aria-label="Steve Free Nitro">
     <img class="avatar" src="profile.jpg" alt="Steve profile picture">
     <span class="brand-copy"><b>STEVE</b><small>FREE NITRO</small></span>
   </a>
@@ -29,16 +29,19 @@
 <main>
 <section class="hero" id="video">
   <div class="eyebrow">01 / FREE NITRO · 2026</div>
+
   <h1>You Fool 😂<br><em>You Thought You Will Get Nitro.</em></h1>
   <p>LoL. Dumb.<br>You really clicked a random Discord Nitro link.</p>
 
-  <div class="video-wrap">
-    <video id="rickroll" autoplay playsinline preload="auto" loop controlslist="nodownload noplaybackrate" disablepictureinpicture>
-      <source src="rickroll.mp4" type="video/mp4">
+  <div class="video-wrap" id="videoWrap">
+    <video id="rickroll" autoplay muted playsinline preload="auto" controls poster="profile.jpg">
+      <source src="assets/reveal.mp4" type="video/mp4">
       Your browser does not support HTML video.
     </video>
-    <div class="video-labels"><span>RICKROLL</span><span id="status">STARTING</span></div>
-    <button class="sound-hint" id="soundHint" type="button" hidden>Tap anywhere to enable sound</button>
+    <div class="video-labels" aria-hidden="true">
+      <span>RICKROLL</span><span id="status">LOADING</span>
+    </div>
+    <button class="sound-hint" id="soundHint" type="button" hidden>Tap anywhere to turn sound on</button>
   </div>
 </section>
 
@@ -60,7 +63,7 @@
   <div class="contacts">
     <a href="https://discord.com/users/iam._.steve" target="_blank" rel="noopener noreferrer">
       <i class="platform discord" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.54 5.42A16.3 16.3 0 0 0 15.5 4l-.52 1.06a14.1 14.1 0 0 0-5.96 0L8.5 4a16.3 16.3 0 0 0-4.04 1.42C1.9 9.18 1.2 12.83 1.56 16.43a16.6 16.6 0 0 0 5.1 2.56l1.23-1.66c-.68-.25-1.33-.56-1.95-.93l.48-.37c3.76 1.76 7.83 1.76 11.54 0l.49.37c-.62.37-1.27.68-1.95.93l1.23 1.66a16.6 16.6 0 0 0 5.1-2.56c.43-4.18-.73-7.8-3.29-11.01ZM8.6 14.34c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22-2 2.22Zm6.8 0c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22-2 2.22Z"/></svg>
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.54 5.42A16.3 16.3 0 0 0 15.5 4l-.52 1.06a14.1 14.1 0 0 0-5.96 0L8.5 4a16.3 16.3 0 0 0-4.04 1.42C1.9 9.18 1.2 12.83 1.56 16.43a16.6 16.6 0 0 0 5.1 2.56l1.23-1.66c-.68-.25-1.33-.56-1.95-.93l.48-.37c3.76 1.76 7.83 1.76 11.54 0l.49.37c-.62.37-1.27.68-1.95.93l1.23 1.66a16.6 16.6 0 0 0 5.1-2.56c.43-4.18-.73-7.8-3.29-11.01ZM8.6 14.34c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22-2 2.22Zm6.8 0c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22 2 2.22Z"/></svg>
       </i>
       <span><small>DISCORD USERNAME</small><strong>@iam._.steve</strong></span><b>↗</b>
     </a>
