@@ -3,89 +3,226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090810">
-<meta name="description" content="Free Nitro. Obviously. Or maybe not.">
-<title>You Fool 😂 — Free Nitro</title>
+<meta name="theme-color" content="#09090b">
+<title>Free Nitro — Steve</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#09090b;color:#f4f0e9;font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+body{min-height:100vh}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(circle at 78% 10%,rgba(143,113,190,.16),transparent 28%),
+    radial-gradient(circle at 12% 82%,rgba(75,112,150,.14),transparent 30%),
+    linear-gradient(145deg,#09090b 0%,#100d17 52%,#08121b 100%);
+}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.09;
+  background-image:radial-gradient(circle,#fff 0 1px,transparent 1.4px);
+  background-size:140px 140px;
+}
+.topbar{
+  height:78px;border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;padding:0 32px;gap:18px;
+  background:rgba(9,9,11,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}
+.avatar{width:48px;height:48px;border-radius:14px;object-fit:cover;display:block;flex:none}
+.brand-copy{display:flex;flex-direction:column;gap:5px}
+.brand-name{font-size:12px;font-weight:700;letter-spacing:3px}
+.brand-sub{font-size:10px;letter-spacing:3px;color:#77737e}
+main{width:min(100%,980px);margin:0 auto;padding:34px 24px 80px}
+.meta{font-size:10px;letter-spacing:3px;color:#77727e;margin:4px 0 28px}
+.hero{text-align:left}
+h1{
+  margin:0;max-width:780px;
+  font:600 clamp(42px,7vw,76px)/.88 "Cormorant Garamond",serif;
+  letter-spacing:-.025em;
+}
+h1 .accent{display:block;color:#b896ff;font-style:italic}
+.lead{margin:22px 0 0;color:#aaa4af;font-size:15px;line-height:1.75;max-width:690px}
+.video-wrap{
+  margin-top:32px;padding:6px;border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;background:#000;box-shadow:0 24px 90px rgba(0,0,0,.55);
+  overflow:hidden;
+}
+video{
+  display:block;width:100%;height:auto;max-height:72vh;object-fit:contain;
+  border-radius:12px;background:#000;
+}
+.status{
+  display:flex;justify-content:space-between;gap:20px;
+  padding:12px 8px 2px;font-size:9px;letter-spacing:2.5px;color:#8b8790;
+  text-transform:uppercase;
+}
+.share{
+  margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,255,255,.08)
+}
+.eyebrow{font-size:10px;letter-spacing:3px;color:#77727e;font-weight:700}
+.share h2,.contacts h2{
+  margin:12px 0 8px;font:600 clamp(38px,6vw,58px)/.95 "Cormorant Garamond",serif
+}
+.share p{color:#9c97a1;font-size:13px;line-height:1.7}
+.link-box{
+  margin-top:22px;padding:16px 18px;border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;background:rgba(255,255,255,.025);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;overflow:auto
+}
+.link-box code{font:600 14px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d7c5ff;white-space:nowrap}
+.copy{
+  flex:none;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.05);
+  color:#eee;padding:10px 14px;border-radius:9px;cursor:pointer;font-size:11px
+}
+.hint{margin:10px 2px 0!important;font-size:10px!important;color:#66616d!important}
+.contacts{margin-top:58px}
+.contact-list{display:grid;gap:12px;margin-top:24px}
+.contact{
+  display:flex;align-items:center;gap:16px;padding:17px 18px;
+  border:1px solid rgba(255,255,255,.1);border-radius:15px;
+  background:rgba(255,255,255,.025);text-decoration:none;color:inherit
+}
+.icon{
+  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+  background:#17152a;flex:none
+}
+.icon svg{width:24px;height:24px}
+.contact small{display:block;color:#77727e;font-size:9px;letter-spacing:2.5px;margin-bottom:5px}
+.contact strong{font-size:16px}
+footer{text-align:center;margin-top:54px;color:#504c55;font-size:9px;letter-spacing:2.5px}
+@media(max-width:600px){
+  .topbar{height:72px;padding:0 16px}
+  .avatar{width:44px;height:44px;border-radius:12px}
+  .brand-name{font-size:11px}
+  .brand-sub{font-size:9px}
+  main{padding:28px 16px 60px}
+  .meta{margin-bottom:22px}
+  h1{font-size:clamp(40px,12vw,58px)}
+  .lead{font-size:13px}
+  .video-wrap{margin-top:25px;border-radius:15px;padding:4px}
+  video{border-radius:11px}
+  .status{padding:10px 5px 2px;font-size:8px}
+  .link-box{align-items:flex-start}
+  .link-box code{font-size:11px;white-space:normal;overflow-wrap:anywhere}
+}
+</style>
 </head>
-<body id="top">
-<div class="grain" aria-hidden="true"></div>
-
-<header class="nav">
-  <a class="brand" href="#top" aria-label="Steve Free Nitro">
-    <img class="avatar" src="profile.jpg" alt="Steve profile picture">
-    <span class="brand-copy"><b>STEVE</b><small>FREE NITRO</small></span>
+<body>
+<header class="topbar">
+  <a class="brand" href="#">
+    <img class="avatar" src="assets/profile.jpg" alt="Steve">
+    <span class="brand-copy">
+      <span class="brand-name">STEVE</span>
+      <span class="brand-sub">FREE NITRO</span>
+    </span>
   </a>
-  <nav aria-label="Page navigation">
-    <a href="#video">VIDEO</a>
-    <a href="#share">SHARE</a>
-    <a href="#contacts">CONTACTS</a>
-  </nav>
 </header>
 
 <main>
-<section class="hero" id="video">
-  <div class="eyebrow">01 / FREE NITRO · 2026</div>
+  <section class="hero">
+    <div class="meta">01 / FREE NITRO · 2026</div>
+    <h1>You Fool 😂<span class="accent">You Thought You Will Get Nitro.</span></h1>
+    <p class="lead">LoL. Dumb.<br>You really clicked a random Discord Nitro link.</p>
 
-  <h1>You Fool 😂<br><em>You Thought You Will Get Nitro.</em></h1>
-  <p>LoL. Dumb.<br>You really clicked a random Discord Nitro link.</p>
-
-  <div class="video-wrap" id="videoWrap">
-    <video id="rickroll" autoplay muted playsinline preload="auto" controls poster="profile.jpg">
-      <source src="assets/reveal.mp4" type="video/mp4">
-      Your browser does not support HTML video.
-    </video>
-    <div class="video-labels" aria-hidden="true">
-      <span>RICKROLL</span><span id="status">LOADING</span>
+    <div class="video-wrap">
+      <video id="rickroll" autoplay playsinline preload="auto" controls>
+        <source src="assets/reveal.mp4" type="video/mp4">
+      </video>
+      <div class="status">
+        <span>Rickroll</span>
+        <span id="status">Playing</span>
+      </div>
     </div>
-    <button class="sound-hint" id="soundHint" type="button" hidden>Tap anywhere to turn sound on</button>
-  </div>
-</section>
+  </section>
 
-<section id="share">
-  <div class="eyebrow">02 / SHARE</div>
-  <h2>Want to share<br><em>this experience?</em></h2>
+  <section class="share">
+    <div class="eyebrow">SHARE THE EXPERIENCE</div>
+    <h2>Want to share this experience?</h2>
+    <p>Send the link below to someone who deserves a little surprise.</p>
+    <div class="link-box">
+      <code id="shareLink">https://iam-steveee.github.io/freenitro</code>
+      <button class="copy" id="copyBtn">Copy</button>
+    </div>
+    <p class="hint">To do this. Just copy and paste this in someone's dm and tell them click on the link</p>
+  </section>
 
-  <div class="copy-card">
-    <code id="shareText"># [Discord Nitro Gift](https://iam-steveee.github.io/freenitro)[.](https://discord.gift/PZ76qKbfX8G8hjTKUKYjZntk)</code>
-    <button id="copy" type="button">Copy</button>
-  </div>
-  <p class="note">To do this. Just copy and paste this in someone's dm and tell them click on the link</p>
-</section>
+  <section class="contacts">
+    <div class="eyebrow">03 / CONNECT</div>
+    <h2>Find me<br><em style="color:#b896ff">outside this page.</em></h2>
+    <div class="contact-list">
+      <a class="contact" href="https://discord.com/users/iam._.steve" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path fill="#9d8cff" d="M19.54 5.02A16.6 16.6 0 0 0 15.45 3.75l-.5 1.02a15.2 15.2 0 0 0-5.9 0l-.5-1.02A16.6 16.6 0 0 0 4.46 5.02C1.88 8.84 1.18 12.57 1.52 16.25a16.8 16.8 0 0 0 5.02 2.54l1.22-1.66c-.67-.25-1.3-.56-1.9-.92l.46-.35c3.67 1.72 7.65 1.72 11.28 0l.46.35c-.6.36-1.23.67-1.9.92l1.22 1.66a16.8 16.8 0 0 0 5.02-2.54c.4-4.27-.7-7.97-1.64-9.23ZM8.3 14.3c-1.07 0-1.95-.98-1.95-2.2s.86-2.2 1.95-2.2 1.96.98 1.95 2.2c0 1.22-.86 2.2-1.95 2.2Zm7.4 0c-1.07 0-1.95-.98-1.95-2.2s.86-2.2 1.95-2.2 1.96.98 1.95 2.2c0 1.22-.86 2.2-1.95 2.2Z"/></svg>
+        </span>
+        <span><small>DISCORD USERNAME</small><strong>@iam._.steve</strong></span>
+      </a>
+      <a class="contact" href="https://discord.gg/amongusindians" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path fill="#9d8cff" d="M19.54 5.02A16.6 16.6 0 0 0 15.45 3.75l-.5 1.02a15.2 15.2 0 0 0-5.9 0l-.5-1.02A16.6 16.6 0 0 0 4.46 5.02C1.88 8.84 1.18 12.57 1.52 16.25a16.8 16.8 0 0 0 5.02 2.54l1.22-1.66c-.67-.25-1.3-.56-1.9-.92l.46-.35c3.67 1.72 7.65 1.72 11.28 0l.46.35c-.6.36-1.23.67-1.9.92l1.22 1.66a16.8 16.8 0 0 0 5.02-2.54c.4-4.27-.7-7.97-1.64-9.23ZM8.3 14.3c-1.07 0-1.95-.98-1.95-2.2s.86-2.2 1.95-2.2 1.96.98 1.95 2.2c0 1.22-.86 2.2-1.95 2.2Zm7.4 0c-1.07 0-1.95-.98-1.95-2.2s.86-2.2 1.95-2.2 1.96.98 1.95 2.2c0 1.22-.86 2.2-1.95 2.2Z"/></svg>
+        </span>
+        <span><small>DISCORD SERVER</small><strong>Among Us Indians</strong></span>
+      </a>
+      <a class="contact" href="https://github.com/iam-steveee" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#f2f0ea"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.16c-3.18.69-3.85-1.34-3.85-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.54-.29-5.2-1.27-5.2-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.12 1.17a10.8 10.8 0 0 1 5.68 0c2.16-1.48 3.12-1.17 3.12-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.39-2.67 5.35-5.21 5.64.41.36.78 1.07.78 2.16v3.2c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg>
+        </span>
+        <span><small>GITHUB PROFILE</small><strong>iam-steveee</strong></span>
+      </a>
+    </div>
+  </section>
 
-<section id="contacts">
-  <div class="eyebrow">03 / CONNECT</div>
-  <h2>Find me<br><em>outside this page.</em></h2>
-
-  <div class="contacts">
-    <a href="https://discord.com/users/iam._.steve" target="_blank" rel="noopener noreferrer">
-      <i class="platform discord" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.54 5.42A16.3 16.3 0 0 0 15.5 4l-.52 1.06a14.1 14.1 0 0 0-5.96 0L8.5 4a16.3 16.3 0 0 0-4.04 1.42C1.9 9.18 1.2 12.83 1.56 16.43a16.6 16.6 0 0 0 5.1 2.56l1.23-1.66c-.68-.25-1.33-.56-1.95-.93l.48-.37c3.76 1.76 7.83 1.76 11.54 0l.49.37c-.62.37-1.27.68-1.95.93l1.23 1.66a16.6 16.6 0 0 0 5.1-2.56c.43-4.18-.73-7.8-3.29-11.01ZM8.6 14.34c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22-2 2.22Zm6.8 0c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22 2 2.22Z"/></svg>
-      </i>
-      <span><small>DISCORD USERNAME</small><strong>@iam._.steve</strong></span><b>↗</b>
-    </a>
-
-    <a href="https://discord.gg/amongusindians" target="_blank" rel="noopener noreferrer">
-      <i class="platform discord" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.54 5.42A16.3 16.3 0 0 0 15.5 4l-.52 1.06a14.1 14.1 0 0 0-5.96 0L8.5 4a16.3 16.3 0 0 0-4.04 1.42C1.9 9.18 1.2 12.83 1.56 16.43a16.6 16.6 0 0 0 5.1 2.56l1.23-1.66c-.68-.25-1.33-.56-1.95-.93l.48-.37c3.76 1.76 7.83 1.76 11.54 0l.49.37c-.62.37-1.27.68-1.95.93l1.23 1.66a16.6 16.6 0 0 0 5.1-2.56c.43-4.18-.73-7.8-3.29-11.01ZM8.6 14.34c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22-2 2.22Zm6.8 0c-1.1 0-2-1-2-2.22s.9-2.22 2-2.22 2 1 2 2.22-.9 2.22-2 2.22Z"/></svg>
-      </i>
-      <span><small>DISCORD SERVER</small><strong>Among Us Indians</strong></span><b>↗</b>
-    </a>
-
-    <a href="https://github.com/iam-steveee" target="_blank" rel="noopener noreferrer">
-      <i class="platform github" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.05c-3.14.68-3.8-1.33-3.8-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.62 1.22 3.26.94.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.74 10.74 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.69.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.32-2.64 5.28-5.15 5.56.4.35.75 1.04.75 2.1v3.1c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg>
-      </i>
-      <span><small>GITHUB PROFILE</small><strong>iam-steveee</strong></span><b>↗</b>
-    </a>
-  </div>
-</section>
+  <footer>FREE NITRO · MADE BY STEVE</footer>
 </main>
 
-<footer><strong>STEVE</strong><span>Free Nitro</span><a href="#top">Back to top ↑</a></footer>
-<script src="app.js"></script>
+<script>
+(function(){
+  const v=document.getElementById('rickroll');
+  const status=document.getElementById('status');
+
+  // Oracle-style: attempt to start immediately, with audio.
+  v.muted=false;
+  v.defaultMuted=false;
+  v.volume=1;
+
+  function start(){
+    const p=v.play();
+    if(p && typeof p.catch==='function'){
+      p.then(()=>{
+        status.textContent='Playing';
+      }).catch(()=>{
+        // Browsers may block audible autoplay. Start immediately muted,
+        // rather than adding a "tap to play" screen.
+        v.muted=true;
+        v.play().then(()=>status.textContent='Playing').catch(()=>status.textContent='Blocked');
+      });
+    }
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',start,{once:true});
+  }else{
+    start();
+  }
+
+  window.addEventListener('pageshow',start,{once:true});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden && v.paused) start();});
+
+  document.getElementById('copyBtn').addEventListener('click',async()=>{
+    const link='https://iam-steveee.github.io/freenitro';
+    try{
+      await navigator.clipboard.writeText(link);
+      document.getElementById('copyBtn').textContent='Copied';
+      setTimeout(()=>document.getElementById('copyBtn').textContent='Copy',1200);
+    }catch{
+      const t=document.createElement('textarea');t.value=link;document.body.appendChild(t);t.select();
+      document.execCommand('copy');t.remove();
+      document.getElementById('copyBtn').textContent='Copied';
+      setTimeout(()=>document.getElementById('copyBtn').textContent='Copy',1200);
+    }
+  });
+})();
+</script>
 </body>
 </html>
